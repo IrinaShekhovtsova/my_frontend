@@ -1,0 +1,20 @@
+p {
+    margin-left: 5px;
+    margin-right: 5px;
+    color: #ed1616;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    flex-direction: row;
+
+
+}
+
+.detail-delimiter {
+    display: none;
+    }
