@@ -10,19 +10,19 @@ export class EnergycardService {
   constructor(private _http: HttpClient) { }
 
   public getEnergyCards(): Observable<IEnergyCard[]> {
-    return this._http.get<IEnergyCard[]>("https://localhost:5001/api/EnergyCards")
+    return this._http.get<IEnergyCard[]>("/api/EnergyCards")
   }
 
   public postCard(card: IEnergyCard) {
-    return this._http.post<IEnergyCard>("https://localhost:5001/api/EnergyCards",card);
+    return this._http.post<IEnergyCard>("/api/EnergyCards",card);
   }
 
   public putCard(card: IEnergyCard, id:number) {
-    return this._http.put<IEnergyCard>("https://localhost:5001/api/EnergyCards/"+id,card);
+    return this._http.put<IEnergyCard>("/api/EnergyCards/"+id,card);
   }
 
   public deleteCard(id:number) {
-    return this._http.delete<any>("https://localhost:5001/api/EnergyCards/"+id);
+    return this._http.delete<any>("/api/EnergyCards/"+id);
   }
 }
 

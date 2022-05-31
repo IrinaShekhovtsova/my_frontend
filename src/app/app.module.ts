@@ -12,6 +12,8 @@ import { SharedModule } from './shared/shared.module';
 import { EnergycardComponent } from './info/energycard/energycard.component';
 import { EditingComponent } from './editing/editing.component';
 import { DialogComponent } from './editing/dialog/dialog.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorService } from './services/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,13 @@ import { DialogComponent } from './editing/dialog/dialog.component';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpInterceptorService,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

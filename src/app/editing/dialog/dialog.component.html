@@ -1,1 +1,44 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title>{{title}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="cardForm">
+    <div class="example-container">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter country's ID</mat-label>
+        <input formControlName="countryID" matInput type="number" placeholder="CountryID">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter country's name</mat-label>
+        <input formControlName="country" matInput placeholder="Country" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter EnergyID</mat-label>
+        <input formControlName="energyID" matInput type="number" placeholder="EnergyID" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter energy's type</mat-label>
+        <mat-select formControlName="energyType" placeholder="EnergyType">
+          <mat-option value="Oil">Oil</mat-option>
+          <mat-option value="Gas">Gas</mat-option>
+          <mat-option value="Coal">Coal</mat-option>
+        </mat-select>
+        </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Enter country's consumption</mat-label>
+        <input formControlName="consumption" matInput type="number" placeholder="Consumption" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Enter country's production</mat-label>
+        <input formControlName="production" matInput type="number" placeholder="Production" required>
+      </mat-form-field>
+
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button style="margin-left: 8px" mat-raised-button color="accent" (click)="addCard()">{{actionBtn}}</button>
+</div>

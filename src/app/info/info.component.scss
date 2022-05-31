@@ -1,0 +1,8 @@
+.for-cards {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .for-cards > * {
+    flex: 1 1 33%;
+  }

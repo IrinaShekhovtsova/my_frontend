@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IEnergyCard, EnergycardService } from '../services/energycard.service';
+import { Md5 } from 'ts-md5';
 
 @Component({
   selector: 'app-info',
@@ -18,4 +19,6 @@ export class InfoComponent implements OnInit {
       this.energyCards=res;})
   }
 
+  a: string = 'Hello';
+  b: string = Md5.hashStr(this.a) as string;
 }
